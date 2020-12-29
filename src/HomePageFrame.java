@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -33,6 +36,8 @@ public class HomePageFrame extends javax.swing.JFrame {
         btnEnterBillDetails = new javax.swing.JButton();
         btnGenerateBill = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
+        btnUpdateRecord = new javax.swing.JButton();
+        btnDeleteCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePage");
@@ -47,15 +52,51 @@ public class HomePageFrame extends javax.swing.JFrame {
 
         btnViewCustomers.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnViewCustomers.setText("View All Customers");
+        btnViewCustomers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewCustomersActionPerformed(evt);
+            }
+        });
 
         btnEnterBillDetails.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnEnterBillDetails.setText("Enter Bill Details");
+        btnEnterBillDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnterBillDetailsActionPerformed(evt);
+            }
+        });
 
         btnGenerateBill.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnGenerateBill.setText("Generate Bill");
+        btnGenerateBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerateBillActionPerformed(evt);
+            }
+        });
 
         btnSignOut.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnSignOut.setText("Sign Out");
+        btnSignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignOutActionPerformed(evt);
+            }
+        });
+
+        btnUpdateRecord.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnUpdateRecord.setText("Update Customer Record");
+        btnUpdateRecord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateRecordActionPerformed(evt);
+            }
+        });
+
+        btnDeleteCustomer.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnDeleteCustomer.setText("Delete Customer Record");
+        btnDeleteCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteCustomerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,11 +106,12 @@ public class HomePageFrame extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnSignOut, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnGenerateBill, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEnterBillDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnViewCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
-                        .addComponent(btnAddCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnGenerateBill, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEnterBillDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                    .addComponent(btnAddCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnUpdateRecord, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                    .addComponent(btnDeleteCustomer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,7 +125,11 @@ public class HomePageFrame extends javax.swing.JFrame {
                 .addComponent(btnEnterBillDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGenerateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdateRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnDeleteCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSignOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
@@ -96,6 +142,34 @@ public class HomePageFrame extends javax.swing.JFrame {
         add.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_btnAddCustomerActionPerformed
+
+    private void btnViewCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCustomersActionPerformed
+        log.viewCustomer();
+        System.exit(0);
+        //JOptionPane.showMessageDialog(null, log.viewCustomer());
+    }//GEN-LAST:event_btnViewCustomersActionPerformed
+
+    private void btnEnterBillDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterBillDetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEnterBillDetailsActionPerformed
+
+    private void btnGenerateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateBillActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerateBillActionPerformed
+
+    private void btnSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignOutActionPerformed
+        LoginFrame logframe = new LoginFrame();
+        logframe.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSignOutActionPerformed
+
+    private void btnUpdateRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRecordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateRecordActionPerformed
+
+    private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,9 +208,11 @@ public class HomePageFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCustomer;
+    private javax.swing.JButton btnDeleteCustomer;
     private javax.swing.JButton btnEnterBillDetails;
     private javax.swing.JButton btnGenerateBill;
     private javax.swing.JButton btnSignOut;
+    private javax.swing.JButton btnUpdateRecord;
     private javax.swing.JButton btnViewCustomers;
     // End of variables declaration//GEN-END:variables
 }

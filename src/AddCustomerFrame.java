@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class AddCustomerFrame extends javax.swing.JFrame {
     DBConnection dbc = new DBConnection();
     Login log = new Login();
-    HomePageFrame hpf = new HomePageFrame();
+    
     /**
      * Creates new form AddCustomerFrame
      */
@@ -167,15 +167,22 @@ public class AddCustomerFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        int CM = Integer.parseInt(txtCMeterNo.getText());
-        int CP = Integer.parseInt(txtCPhoneNo.getText());
+        //int CM = Integer.parseInt(txtCMeterNo.getText());
+        String CM = txtCMeterNo.getText();
         String CN = txtCName.getText();
         String CA = txtCAddress.getText();
         String CE = txtCEmail.getText();
+        String CP = txtCPhoneNo.getText();
+        //int CP = Integer.parseInt(txtCPhoneNo.getText());
         boolean b = log.addCustomer(CM, CN, CA, CE, CP);
         if(b)
         {
             JOptionPane.showMessageDialog(null, "Customer Record Added");
+            txtCMeterNo.setText("");
+            txtCName.setText("");
+            txtCAddress.setText("");
+            txtCEmail.setText("");
+            txtCPhoneNo.setText("");
         }
         else
         {
@@ -184,6 +191,7 @@ public class AddCustomerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        HomePageFrame hpf = new HomePageFrame();
         hpf.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelActionPerformed

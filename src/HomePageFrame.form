@@ -28,12 +28,12 @@
               <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btnSignOut" pref="362" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnGenerateBill" alignment="1" max="32767" attributes="0"/>
-                      <Component id="btnEnterBillDetails" alignment="1" max="32767" attributes="0"/>
-                      <Component id="btnViewCustomers" pref="362" max="32767" attributes="0"/>
-                      <Component id="btnAddCustomer" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="btnGenerateBill" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnEnterBillDetails" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnViewCustomers" pref="362" max="32767" attributes="0"/>
+                  <Component id="btnAddCustomer" max="32767" attributes="0"/>
+                  <Component id="btnUpdateRecord" alignment="0" pref="362" max="32767" attributes="0"/>
+                  <Component id="btnDeleteCustomer" alignment="1" pref="362" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="100" max="32767" attributes="0"/>
           </Group>
@@ -50,7 +50,11 @@
               <Component id="btnEnterBillDetails" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnGenerateBill" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnUpdateRecord" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnDeleteCustomer" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSignOut" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace pref="37" max="32767" attributes="0"/>
           </Group>
@@ -76,6 +80,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="View All Customers"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewCustomersActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnEnterBillDetails">
       <Properties>
@@ -84,6 +91,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Enter Bill Details"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnterBillDetailsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnGenerateBill">
       <Properties>
@@ -92,6 +102,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Generate Bill"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerateBillActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSignOut">
       <Properties>
@@ -100,6 +113,31 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Sign Out"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignOutActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnUpdateRecord">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Update Customer Record"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateRecordActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDeleteCustomer">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Delete Customer Record"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteCustomerActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
