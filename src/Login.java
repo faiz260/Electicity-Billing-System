@@ -84,8 +84,43 @@ public class Login extends LoginFrame {
             JOptionPane.showMessageDialog(null, ex);
             b = false;
         }
-        
-        
+        return b;
+    }
+     public boolean DeleteCustomer(int id)
+    {
+        boolean b;
+        String sql = "delete from Customer where MeterNumber='"+id+"'";
+        try
+        {
+          state = con.createStatement();
+          int res = state.executeUpdate(sql);
+          if(res>0)
+          {
+              b = true;
+          }
+          else
+          {
+              b = false;
+          }
+        }
+        catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+            b = false;
+        }
+        return b;
+    }
+}
+
+
+
+
+
+
+
+
+
+       
         
 //        String[] columnNames = {"MeterNumber","CustomerName","Address","Email","PhoneNo"};
 //        JFrame frame1 = new JFrame("Customer Records");
@@ -264,6 +299,3 @@ public class Login extends LoginFrame {
          System.out.print(", First: " + first);
          System.out.println(", Last: " + last);
       }*/
-        return b;
-    }
-}

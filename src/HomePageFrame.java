@@ -168,7 +168,9 @@ public class HomePageFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateRecordActionPerformed
 
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
-        // TODO add your handling code here:
+        DeleteCustomerFrame dcf = new DeleteCustomerFrame();
+        dcf.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
     /**
